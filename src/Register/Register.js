@@ -32,6 +32,8 @@ function Register() {
   const [disable, setDisable] = useState(true)
   const [serverError, setServerError] = useState('')
 
+  console.log(token);
+
   function ValidateEmail(mail) 
   {
     let re =  /\S+@\S+\.\S+/;
@@ -47,10 +49,11 @@ function Register() {
   }
 
 
-  const handleLogin = () => {
-    axios.post(`http://127.0.0.1:8000/api/v1/rest-auth/login/`, {
+  const handleRegister = () => {
+    axios.post(`http://127.0.0.1:8000/api/v1/rest-auth/registration/`, {
         email: email,
-        password: password
+        password1: password,
+        password2: password
       }).then((res) => {
         console.log(res.data);
         setToken(res.data.key)
@@ -80,7 +83,7 @@ function Register() {
  
       }).catch((error) => {
         console.log(error);
-        setServerError('Unable to log in with provided credentials.')
+        setServerError(`${error}`)
       })
   }
 
@@ -104,7 +107,19 @@ function Register() {
     else {
       setPasswordError('')
     }
+
   }
+
+  useEffect(() => {
+
+    if (emailError === '' && passwordError === '') {
+      setDisable(false)
+    } else {
+      setDisable(true)
+    }
+
+
+  }, [email, emailError, password, passwordError])
 
 
 
@@ -155,7 +170,7 @@ function Register() {
          
         </Form>
 
-        <Button variant="primary" className="btn-4">Register</Button>
+        <Button variant="primary" className="btn-4" onClick={handleRegister} disabled={disable}>Register</Button>
 
              
           </div>

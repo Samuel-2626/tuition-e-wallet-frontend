@@ -41,7 +41,7 @@ function Navigation() {
 
     return (
       <Navbar collapseOnSelect expand="lg" className="nav">
-        This should be an Image{' '} &nbsp;
+        <strong>Tuition E-Wallet</strong>{' '} &nbsp;
         <Navbar.Brand href="/" className="color"></Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
@@ -74,7 +74,7 @@ function Navigation() {
 
   return (
     <Navbar collapseOnSelect expand="lg" className="nav">
-        This should be an Image{' '} &nbsp;
+        <strong>Tuition E-Wallet</strong>{' '} &nbsp;
         <Navbar.Brand href="/" className="color"></Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
