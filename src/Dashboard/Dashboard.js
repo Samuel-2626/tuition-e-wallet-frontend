@@ -5,6 +5,7 @@ import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
+import Card from 'react-bootstrap/Card';
 
 import {UserContext} from '../UserContext';
 import {PrimaryKeyContext} from '../UserContext';
@@ -19,7 +20,6 @@ function Dashboard() {
   const [pk, setPk] = useContext(PrimaryKeyContext);
   const [status, setStatus] = useContext(StaffStatusContext);
 
-  const [profile, setProfile] = useState({})
 
   const [email, setEmail] = useState('')
   const [emailError, setEmailError] = useState('This field is required')
@@ -44,7 +44,7 @@ function Dashboard() {
 
 
   const handleLogin = () => {
-    axios.post(`http://127.0.0.1:8000/api/v1/rest-auth/login/`, {
+    axios.post(`https://tuition-e-wallet-backend.herokuapp.com/api/v1/rest-auth/login/`, {
         email: email,
         password: password
       }).then((res) => {
@@ -53,7 +53,7 @@ function Dashboard() {
 
         var temp_token = res.data.key
 
-        axios.get(`http://127.0.0.1:8000/apis/v1/get_user/${email}`, {
+        axios.get(`https://tuition-e-wallet-backend.herokuapp.com/apis/v1/get_user/${email}`, {
           headers: {
             'Authorization': `Token ${temp_token}`
           }
@@ -104,20 +104,6 @@ function Dashboard() {
 
  
 
-  useEffect(() => (
-
-    axios.get(`http://127.0.0.1:8000/apis/v1/get_profile/${pk}`, {
-        headers: {
-          'Authorization': `Token ${token}`
-        }
-      }).then((res) => {
-        setProfile(res.data.fields);
-        console.log(res.data.fields);
-      }).catch((error) => {
-        console.log(error);
-      })
-
-  ), [pk, token, status])
 
   useEffect(() => {
 
@@ -135,20 +121,38 @@ function Dashboard() {
     return (
       <div className="m-5">
         <Container>
-          <h2>Hello {profile.first_name}</h2>
+          <h2>Hi {email} 👋</h2>
           <p>welcome to your dashboard</p>
-          <p><strong>Here are some of your details:</strong></p>
-          
-         <ul>
-           <li>{profile.first_name} {profile.last_name}</li>
-           <li>{profile.date_of_birth}</li>
-           <li>{profile.gender}</li>
-           <li>{profile.address}</li>
-           <li>{profile.title}</li>
-           <li>{profile.phone_number}</li>
-           <li>{status}</li>
-         </ul>
-          
+
+          <Card
+    style={{ width: '18rem' }}
+    className="mb-2"
+  >
+    <Card.Header>E-Wallet</Card.Header>
+    <Card.Body>
+      <Card.Title> Card Title </Card.Title>
+      <Card.Text>
+        Some quick example text to build on the card title and make up the bulk
+        of the card's content.
+      </Card.Text>
+    </Card.Body>
+  </Card>
+
+  <Card
+    style={{ width: '18rem' }}
+    className="mb-2"
+  >
+
+  <Card.Header>Pikin Savings</Card.Header>
+    <Card.Body>
+      <Card.Title> Card Title </Card.Title>
+      <Card.Text>
+        Some quick example text to build on the card title and make up the bulk
+        of the card's content.
+      </Card.Text>
+    </Card.Body>
+  </Card>
+                  
         </Container>
       </div>
     )
@@ -202,7 +206,7 @@ function Dashboard() {
         </Form>
 
         <Button variant="primary" className="btn-4" onClick={handleLogin} disabled={disable}>Login</Button>
-        <Button variant="primary" className="btn-4">forgot password</Button>
+        {/* <Button variant="primary" className="btn-4">forgot password</Button> */}
 
       </Container>
       

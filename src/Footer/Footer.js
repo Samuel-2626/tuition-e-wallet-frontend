@@ -41,7 +41,7 @@ function Footer() {
             </Col>
             <Col sm={4}>
             This should be an Image
-            <a href="/apply"><Button variant="primary" size="lg" className="btn-2">Register</Button></a>
+            <a href="/register"><Button variant="primary" size="lg" className="btn-2">Register</Button></a>
             </Col>
           </Row>
 

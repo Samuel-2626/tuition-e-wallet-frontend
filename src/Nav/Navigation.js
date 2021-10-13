@@ -4,6 +4,8 @@ import Navbar from 'react-bootstrap/Navbar';
 import Nav from 'react-bootstrap/Nav';
 import Button from 'react-bootstrap/Button';
 
+import { FaAffiliatetheme } from "react-icons/fa";
+
 import { Link } from 'react-router-dom';
 
 import {UserContext} from '../UserContext';
@@ -21,7 +23,7 @@ function Navigation() {
 
   const handleLogout = () => {
     
-    axios.post(`http://127.0.0.1:8000/api/v1/rest-auth/logout/`, {
+    axios.post(`https://tuition-e-wallet-backend.herokuapp.com/api/v1/rest-auth/logout/`, {
         headers: {
           'Authorization': `Token ${token}`
         }
@@ -41,7 +43,7 @@ function Navigation() {
 
     return (
       <Navbar collapseOnSelect expand="lg" className="nav">
-        <strong>Tuition E-Wallet</strong>{' '} &nbsp;
+        <strong><FaAffiliatetheme /> {' '} &nbsp;Tuition E-Wallet</strong>{' '} &nbsp;
         <Navbar.Brand href="/" className="color"></Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
@@ -74,7 +76,7 @@ function Navigation() {
 
   return (
     <Navbar collapseOnSelect expand="lg" className="nav">
-        <strong>Tuition E-Wallet</strong>{' '} &nbsp;
+        <strong><FaAffiliatetheme />{' '} &nbsp;Tuition E-Wallet</strong>{' '} &nbsp;
         <Navbar.Brand href="/" className="color"></Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
@@ -95,7 +97,7 @@ function Navigation() {
         </Navbar.Collapse>
         <Navbar.Collapse id="responsive-navbar-nav">
         <Nav className="ml-auto">
-           <Link to="/apply"><Button variant="primary" className="btn" onClick={handleLogout}>Logout</Button></Link>
+           <Link to="/dashboard"><Button variant="primary" className="btn" onClick={handleLogout}>Logout</Button></Link>
         </Nav>
         </Navbar.Collapse>
         

@@ -30,7 +30,7 @@ function Home() {
             extra attention to featured content or information.
           </p>
           <p>
-            <Link to="/apply"><Button variant="primary" size="lg">Apply Now</Button></Link>
+            <Link to="/register"><Button variant="primary" size="lg">Register</Button></Link>
           </p>
         </Container>
       </Jumbotron>

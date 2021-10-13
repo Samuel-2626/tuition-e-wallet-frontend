@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from 'react'
+import React, { useEffect, useState } from 'react'
 
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
@@ -8,10 +8,10 @@ import Col from 'react-bootstrap/Col';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 
-import {UserContext} from '../UserContext';
-import {PrimaryKeyContext} from '../UserContext';
-import {StaffStatusContext} from '../UserContext';
+
 import axios from 'axios';
+
+import {Redirect} from 'react-router-dom'
 
 
 
@@ -20,9 +20,10 @@ import axios from 'axios';
 
 function Register() {
 
-  const [token, setToken] = useContext(UserContext);
-  const [pk, setPk] = useContext(PrimaryKeyContext);
-  const [status, setStatus] = useContext(StaffStatusContext);
+
+
+
+  const [redirect, setRedirect] = useState(false)
 
   
   const [email, setEmail] = useState('')
@@ -32,7 +33,6 @@ function Register() {
   const [disable, setDisable] = useState(true)
   const [serverError, setServerError] = useState('')
 
-  console.log(token);
 
   function ValidateEmail(mail) 
   {
@@ -50,41 +50,27 @@ function Register() {
 
 
   const handleRegister = () => {
-    axios.post(`http://127.0.0.1:8000/api/v1/rest-auth/registration/`, {
+    axios.post(`https://tuition-e-wallet-backend.herokuapp.com/api/v1/rest-auth/registration/`, {
         email: email,
         password1: password,
         password2: password
       }).then((res) => {
-        console.log(res.data);
-        setToken(res.data.key)
 
         var temp_token = res.data.key
 
-        axios.get(`http://127.0.0.1:8000/apis/v1/get_user/${email}`, {
-          headers: {
-            'Authorization': `Token ${temp_token}`
-          }
-        }).then((res) => {
-          console.log(res.data);
-          console.log(res.data.fields['is_staff']);
-          setPk(res.data.pk)
-          if (res.data.fields['is_staff'] === false) {
-            setStatus('regular')
-          } else {
-            setStatus('admin')
-          }
-          
-        
-          console.log(pk);
-          console.log(status);
+        axios.post(`https://tuition-e-wallet-backend.herokuapp.com/api/v1/rest-auth/logout/`, {
+        headers: {
+          'Authorization': `Token ${temp_token}`
+        }
+      }).then((res) => {
+        setRedirect(true)
         }).catch(error => {
-          console.log(error);
         })
  
       }).catch((error) => {
-        console.log(error);
-        setServerError(`${error}`)
+        setServerError(`${error.response.data.email[0]}`)
       })
+
   }
 
   const handleEmail = (e) => {
@@ -120,6 +106,12 @@ function Register() {
 
 
   }, [email, emailError, password, passwordError])
+
+  if (redirect) {
+    return (
+      <Redirect to="/dashboard" />
+    )
+  }
 
 
 
