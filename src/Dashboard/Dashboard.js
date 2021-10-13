@@ -12,6 +12,7 @@ import {PrimaryKeyContext} from '../UserContext';
 import {StaffStatusContext} from '../UserContext';
 import axios from 'axios';
 
+import { Link } from 'react-router-dom';
 
 
 function Dashboard() {
@@ -122,36 +123,48 @@ function Dashboard() {
       <div className="m-5">
         <Container>
           <h2>Hi {email} 👋</h2>
-          <p>welcome to your dashboard</p>
+          <p><strong>welcome to your dashboard</strong></p>
 
-          <Card
+          
+    <Row>
+    <Col lg={4}>
+    <Card
     style={{ width: '18rem' }}
     className="mb-2"
   >
-    <Card.Header>E-Wallet</Card.Header>
+    <Card.Header><strong>E-Wallet</strong></Card.Header>
     <Card.Body>
-      <Card.Title> Card Title </Card.Title>
+      <Card.Title> --- </Card.Title>
       <Card.Text>
-        Some quick example text to build on the card title and make up the bulk
-        of the card's content.
+      An unwithdrawable e-wallet  for  tuition fee
+
       </Card.Text>
     </Card.Body>
-  </Card>
+    <Link to="/wallet"><Button variant="primary">Apply Now</Button></Link>
 
-  <Card
+  </Card>
+    </Col>
+    <Col lg={4}>
+    <Card
     style={{ width: '18rem' }}
     className="mb-2"
   >
 
-  <Card.Header>Pikin Savings</Card.Header>
+  <Card.Header><strong>Pikin Savings</strong></Card.Header>
     <Card.Body>
-      <Card.Title> Card Title </Card.Title>
+      <Card.Title> --- </Card.Title>
       <Card.Text>
-        Some quick example text to build on the card title and make up the bulk
-        of the card's content.
+      Sees your child through his or her final educational level 
       </Card.Text>
     </Card.Body>
+    <Button variant="primary">See more</Button>{' '}
   </Card>
+    </Col>
+    </Row>
+
+    
+
+  
                   
         </Container>
       </div>

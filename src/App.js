@@ -6,6 +6,7 @@ import Contact from './Contact/Contact'
 import Register from './Register/Register'
 import Error from './Error/Error'
 import Dashboard from './Dashboard/Dashboard'
+import Wallet from './Wallet/Wallet'
 
 import { Route, Switch } from 'react-router-dom';
 
@@ -23,6 +24,7 @@ function App() {
       <Route path="/contact" component={Contact} />
       <Route path="/register" component={Register} />
       <Route path="/dashboard" component={Dashboard} />
+      <Route path="/wallet" component={Wallet} />
       <Route component={Error} />
       </Switch>
       <Footer /> 
