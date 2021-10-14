@@ -47,7 +47,7 @@ function Dashboard() {
 
   const handleLogin = () => {
     setAuthenticating(true)
-    axios.post(`http://127.0.0.1:8000/api/v1/rest-auth/login/`, {
+    axios.post(`https://tuition-e-wallet-backend.herokuapp.com/api/v1/rest-auth/login/`, {
         email: email,
         password: password
       }).then((res) => {
@@ -56,7 +56,7 @@ function Dashboard() {
 
         var temp_token = res.data.key
 
-        axios.get(`http://127.0.0.1:8000/apis/v1/get_user/${email}`, {
+        axios.get(`https://tuition-e-wallet-backend.herokuapp.com/apis/v1/get_user/${email}`, {
           headers: {
             'Authorization': `Token ${temp_token}`
           }
