@@ -1,3 +1,4 @@
+
 import Container from 'react-bootstrap/Container';
 import Jumbotron from 'react-bootstrap/Jumbotron';
 import Row from 'react-bootstrap/Row';
@@ -18,7 +19,11 @@ import { Link } from 'react-router-dom';
 
 import Zoom from 'react-reveal/Zoom';
 
+
+
 function Home() {
+
+
   return (
     <div>
 
@@ -30,7 +35,10 @@ function Home() {
             extra attention to featured content or information.
           </p>
           <p>
-            <Link to="/register"><Button variant="primary" size="lg">Register</Button></Link>
+         
+<Link to="/register"><Button variant="primary" size="lg">Register</Button></Link>
+
+
           </p>
         </Container>
       </Jumbotron>

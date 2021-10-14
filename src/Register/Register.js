@@ -18,6 +18,7 @@ import {Redirect} from 'react-router-dom'
 
 
 
+
 function Register() {
 
 
@@ -32,6 +33,9 @@ function Register() {
   const [passwordError, setPasswordError] = useState('This field is required')
   const [disable, setDisable] = useState(true)
   const [serverError, setServerError] = useState('')
+
+
+  const [authenticating, setAuthenticating] = useState(false)
 
 
   function ValidateEmail(mail) 
@@ -50,6 +54,7 @@ function Register() {
 
 
   const handleRegister = () => {
+    setAuthenticating(true)
     axios.post(`https://tuition-e-wallet-backend.herokuapp.com/api/v1/rest-auth/registration/`, {
         email: email,
         password1: password,
@@ -63,12 +68,16 @@ function Register() {
           'Authorization': `Token ${temp_token}`
         }
       }).then((res) => {
+        setAuthenticating(false)
         setRedirect(true)
         }).catch(error => {
+          setAuthenticating(false)
         })
  
       }).catch((error) => {
+        setAuthenticating(false)
         setServerError(`${error.response.data.email[0]}`)
+
       })
 
   }
@@ -106,6 +115,27 @@ function Register() {
 
 
   }, [email, emailError, password, passwordError])
+
+  if (authenticating) {
+
+    return (
+      <Container>
+        <Row>
+          <Col lg={8} className="text-center apply_form p-3 text-dark">
+          <main>
+        <h1>Registrying...</h1>
+        <div class="spinner-border"></div>
+      </main>
+          </Col>
+        </Row>
+      </Container>
+      
+
+           
+
+    )
+
+  }
 
   if (redirect) {
     return (

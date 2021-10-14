@@ -7,6 +7,7 @@ import Register from './Register/Register'
 import Error from './Error/Error'
 import Dashboard from './Dashboard/Dashboard'
 import Wallet from './Wallet/Wallet'
+import Virtual from './Virtual/Virtual'
 
 import { Route, Switch } from 'react-router-dom';
 
@@ -25,6 +26,7 @@ function App() {
       <Route path="/register" component={Register} />
       <Route path="/dashboard" component={Dashboard} />
       <Route path="/wallet" component={Wallet} />
+      <Route path="/create" component={Virtual} />
       <Route component={Error} />
       </Switch>
       <Footer /> 

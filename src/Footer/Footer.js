@@ -1,7 +1,7 @@
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-import Button from 'react-bootstrap/Button';
+
 
 
 import { Link } from 'react-router-dom';
@@ -24,7 +24,7 @@ function Footer() {
               Lagos, Nigeria.
               </p>
               <p className="">
-              support@pennytrust.ng
+              support@tuition.wallet
               <br />
               07085698828
               </p>
@@ -41,7 +41,7 @@ function Footer() {
             </Col>
             <Col sm={4}>
             This should be an Image
-            <a href="/register"><Button variant="primary" size="lg" className="btn-2">Register</Button></a>
+            {/* <a href="/register"><Button variant="primary" size="lg" className="btn-2">Register</Button></a> */}
             </Col>
           </Row>
 

@@ -97,6 +97,7 @@ function Navigation() {
         </Navbar.Collapse>
         <Navbar.Collapse id="responsive-navbar-nav">
         <Nav className="ml-auto">
+        <Link to="/dashboard"><Button variant="primary" className="btn">Dashboard</Button></Link>
            <Link to="/dashboard"><Button variant="primary" className="btn" onClick={handleLogout}>Logout</Button></Link>
         </Nav>
         </Navbar.Collapse>

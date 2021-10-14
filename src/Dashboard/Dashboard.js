@@ -28,6 +28,7 @@ function Dashboard() {
   const [passwordError, setPasswordError] = useState('This field is required')
   const [disable, setDisable] = useState(true)
   const [serverError, setServerError] = useState('')
+  const [authenticating, setAuthenticating] = useState(false)
 
   function ValidateEmail(mail) 
   {
@@ -45,7 +46,8 @@ function Dashboard() {
 
 
   const handleLogin = () => {
-    axios.post(`https://tuition-e-wallet-backend.herokuapp.com/api/v1/rest-auth/login/`, {
+    setAuthenticating(true)
+    axios.post(`http://127.0.0.1:8000/api/v1/rest-auth/login/`, {
         email: email,
         password: password
       }).then((res) => {
@@ -54,7 +56,7 @@ function Dashboard() {
 
         var temp_token = res.data.key
 
-        axios.get(`https://tuition-e-wallet-backend.herokuapp.com/apis/v1/get_user/${email}`, {
+        axios.get(`http://127.0.0.1:8000/apis/v1/get_user/${email}`, {
           headers: {
             'Authorization': `Token ${temp_token}`
           }
@@ -71,12 +73,15 @@ function Dashboard() {
         
           console.log(pk);
           console.log(status);
+          setAuthenticating(false)
         }).catch(error => {
           console.log(error);
+          setAuthenticating(false)
         })
  
       }).catch((error) => {
         console.log(error);
+        setAuthenticating(false)
         setServerError('Unable to log in with provided credentials.')
       })
   }
@@ -117,6 +122,27 @@ function Dashboard() {
 
     }, [email, emailError, password, passwordError])
 
+    if (authenticating) {
+
+      return (
+        <Container>
+          <Row>
+            <Col lg={12} className="text-center apply_form p-3 text-dark">
+            <main>
+          <h1>Logging In...</h1>
+          <div class="spinner-border"></div>
+        </main>
+            </Col>
+          </Row>
+        </Container>
+        
+  
+             
+
+      )
+
+    }
+
 
   if (token !== '' && status === 'regular') {
     return (
@@ -134,7 +160,7 @@ function Dashboard() {
   >
     <Card.Header><strong>E-Wallet</strong></Card.Header>
     <Card.Body>
-      <Card.Title> --- </Card.Title>
+      <Card.Title> For Students </Card.Title>
       <Card.Text>
       An unwithdrawable e-wallet  for  tuition fee
 
@@ -152,12 +178,12 @@ function Dashboard() {
 
   <Card.Header><strong>Pikin Savings</strong></Card.Header>
     <Card.Body>
-      <Card.Title> --- </Card.Title>
+      <Card.Title> For Parents </Card.Title>
       <Card.Text>
       Sees your child through his or her final educational level 
       </Card.Text>
     </Card.Body>
-    <Button variant="primary">See more</Button>{' '}
+    <Button variant="primary" disabled>See more</Button>{' '}
   </Card>
     </Col>
     </Row>
