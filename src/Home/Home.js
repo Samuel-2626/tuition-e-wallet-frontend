@@ -17,7 +17,7 @@ import { DiAndroid } from "react-icons/di";
 import { DiApple } from "react-icons/di";
 import { Link } from 'react-router-dom';
 
-import Zoom from 'react-reveal/Zoom';
+import Zoom from 'react-reveal/Zoom'; 
 
 
 
@@ -31,8 +31,7 @@ function Home() {
         <Container>
           <h1 className="darkorange"><strong>Welcome to Tuition E-Wallet&trade;</strong></h1>
           <p>
-            This is a simple hero unit, a simple jumbotron-style component for calling
-            extra attention to featured content or information.
+          Just Start your journey into a financial freedom
           </p>
           <p>
          
@@ -48,21 +47,16 @@ function Home() {
           <Row>
             <Col lg={8}>
               <Zoom>
-              <h2 className="grey-text"><strong>ABOUT US</strong></h2>
+              <h2 className="grey-text"><strong>VISION / MISSION</strong></h2>
               </Zoom>
               
               <hr className="border-bottom-dark" />
               <p className="dark-text">
-              This is a simple hero unit, a simple jumbotron-style component for calling
-              extra attention to featured content or information.
-              This is a simple hero unit, a simple jumbotron-style component for calling
-              extra attention to featured content or information.
-              This is a simple hero unit, a simple jumbotron-style component for calling
-              extra attention to featured content or information.
+              To create the smartest way of managing tuition fund for parents and students while ensuring a financial freedom
               </p>
             </Col>
             <Col lg={4}>
-              This should be an Image
+            <p style={{fontSize:100}}>&#129312;</p>
             </Col>
           </Row>
         </Container>
@@ -79,38 +73,32 @@ function Home() {
         <Row className="text-center">
           <Col lg={4} className="services">
           <BsFillGiftFill size="80" className="darkorange" />
-          <h3>Quick Loan</h3>
+          <h3>E-wallet</h3>
           <br />
           <br />
           <p className="orange-border">
-          This is a simple hero unit, a simple jumbotron-style component for calling
-            extra attention to featured content or information.
-            This is a simple hero unit, a simple jumbotron-style component for calling
-            extra attention to featured content or information.
+          A software application with an unwithdrawable e-wallet  for  tuition fee
+
           </p>
           </Col>
           <Col lg={4} className="services">
           <BsFillPuzzleFill size="80" className="darkorange" />
-          <h3>Credit Services</h3>
+          <h3>Pikin savings</h3>
           <br />
           <br />
           <p className="orange-border">
-          This is a simple hero unit, a simple jumbotron-style component for calling
-            extra attention to featured content or information.
-            This is a simple hero unit, a simple jumbotron-style component for calling
-            extra attention to featured content or information.
+          Sees your child through his or her final educational level 
+
           </p>
           </Col>
           <Col lg={4} className="services">
           <BsLightningFill size="80" className="darkorange" />
-          <h3>Easy Access</h3>
+          <h3>financial freedom</h3>
           <br />
           <br />
           <p className="orange-border">
-          This is a simple hero unit, a simple jumbotron-style component for calling
-            extra attention to featured content or information.
-            This is a simple hero unit, a simple jumbotron-style component for calling
-            extra attention to featured content or information.
+          finally withdraw for a business purpose after post graduate degree.
+
           </p>
           </Col>
         </Row>
@@ -123,7 +111,7 @@ function Home() {
       <div className="orange-bg">
         <Container>
           <Zoom>
-          <h2 className="dark-text"><strong>HOW WE WORK</strong></h2>
+          <h2 className="dark-text"><strong>UNIQUE VALUE PROPOSITION</strong></h2>
           </Zoom>
         
           <hr className="border-bottom-dark" />
@@ -131,29 +119,31 @@ function Home() {
           <Row className="text-center">
             <Col lg={4} className="work">
             <BsSkipBackwardFill size="80" className="darkbrown" />
-            <h3 className="">You Apply</h3>
+            <h3 className="">1</h3>
             <br />
             <br />
             <p className="dark-text">
-            At Tuition E-Wallet we are determined to make financial loans accessible to those who need it most. You can apply for a Credit Wallet loan from the comfort of your own home, anytime of the day.
+            Parent users  can save responsibly and secure their childs tuition fee till post graduate.  
             </p>
             </Col>
             <Col lg={4} className="work">
             <BsShieldFill size="80" className="darkbrown" />
-            <h3 className="">We Process</h3>
+            <h3 className="">2</h3>
             <br />
             <br />
             <p className="dark-text">
-            With innovative technology to assess your ability to repay your loan. Partnering with Credit Bureaus and your employer, we are able to quickly and fairly assess your financial position.
+            Students can inherit pikin savings from parents after admission into a uni and continue  on the path of a  tuition fee /after school savings habit. 
+
             </p>
             </Col>
             <Col lg={4} className="work">
             <BsSkipForwardFill size="80" className="darkbrown" />
-            <h3 className="">We Disburse</h3>
+            <h3 className="">3</h3>
             <br />
             <br />
             <p className="dark-text">
-            When you accept our ‘Credit Offer” with terms and conditions, we will automatically disburse the agreed funds into your account. wewewewewewewewewewewe
+            School fees payment across all levels of education is constant
+
             </p>
             </Col>
           </Row>

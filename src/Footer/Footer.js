@@ -16,17 +16,10 @@ function Footer() {
           <Row className="text-center">
             <Col sm={4}>
               <h3 className="dark-text"><strong>Tuition E-Wallet&trade;</strong></h3>
-              <p className="">
-              23, Opebi Road,
-              <br />
-              Pentagon Plaza, Ikeja.
-              <br />
-              Lagos, Nigeria.
-              </p>
+         
               <p className="">
               support@tuition.wallet
-              <br />
-              07085698828
+ 
               </p>
             </Col>
             <Col sm={4}>
@@ -35,12 +28,10 @@ function Footer() {
               <br />
               <Link to="/contact" className="darkcolor">Contact Us</Link>
               <br />
-              <Link to="/contact" className="darkcolor">Mobile App</Link>
-              <br />
-              <Link to="/contact" className="darkcolor">How To Apply</Link>
+              <Link to="/register" className="darkcolor">Get Started</Link>
             </Col>
             <Col sm={4}>
-            This should be an Image
+            <p style={{fontSize:100}}>&#129488;</p>
             {/* <a href="/register"><Button variant="primary" size="lg" className="btn-2">Register</Button></a> */}
             </Col>
           </Row>

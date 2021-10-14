@@ -22,57 +22,54 @@ function FAQ() {
        <Accordion defaultActiveKey="0">
          <Card>
            <Accordion.Toggle as={Card.Header} eventKey="0">
-           <strong>Who is Tuition E-Wallet? Which bank are you affiliated with?</strong>
+           <strong>Customer Segment</strong>
            </Accordion.Toggle>
            <Accordion.Collapse eventKey="0">
              <Card.Body>
-             Tuition E-Wallet is licensed lender based in Lagos, Nigeria. We are determined to make financial credit accessible to those who need it most. Today we are doing so by offering loans to hundreds of salary earners in Nigeria.
-
-               We are not affiliated with any bank.
+             Undergraduate, Postgraduate & Parents
              </Card.Body>
            </Accordion.Collapse>
          </Card>
          <Card>
            <Accordion.Toggle as={Card.Header} eventKey="1">
-           <strong>Who qualifies for a Credit Wallet loan?</strong>
+           <strong>Early Adopters</strong>
            </Accordion.Toggle>
            <Accordion.Collapse eventKey="1">
              <Card.Body>
-               You qualify for a PennyTrust Inc. loan if you work for the Federal Government of Nigeria, or your employer is part of the Remita Payroll & HR platform.
+               Undergraduate Students & Parents
                </Card.Body>
            </Accordion.Collapse>
          </Card>
          <Card>
            <Accordion.Toggle as={Card.Header} eventKey="2">
-           <strong>How do I apply for a loan?</strong>
+           <strong>Problem Statement 1</strong>
            </Accordion.Toggle>
            <Accordion.Collapse eventKey="2">
              <Card.Body>
-             Simply click on the ‘Apply Now’ button anywhere on this website and you will be redirected to the loan application portal where you can begin your loan application.
+             Parents & students misspend money meant for school transactions (for themselves or their children)
 
-             Complete the application form with all the correct details and we’ll take care of the rest!
                </Card.Body>
            </Accordion.Collapse>
          </Card>
          <Card>
            <Accordion.Toggle as={Card.Header} eventKey="3">
-           <strong>I need help with my application. Who can I talk to?</strong>
+           <strong>Problem Statement 2</strong>
            </Accordion.Toggle>
            <Accordion.Collapse eventKey="3">
              <Card.Body>
-             Please call our customer success team on 0708 569 8828 or send an email to customersuccess@pennytrust.ng
+             Students fail to have enough savings after undergraduate level for  furthering a postgraduate degree or starting a business
+
                </Card.Body>
            </Accordion.Collapse>
          </Card>
          <Card>
            <Accordion.Toggle as={Card.Header} eventKey="4">
-           <strong>What happens if I miss one or more monthly repayments?</strong>
+           <strong>Problem Statement 3</strong>
            </Accordion.Toggle>
            <Accordion.Collapse eventKey="4">
              <Card.Body>
-             It is very important you make your loan repayments on time as agreed in the ‘Credit Offer’. Failing to do so could negatively affect your Credit Score which makes it difficult for you to get future loans from us or any other financial institution.
+             Students hold too much cash at hand
 
-             There is also a monthly penalty charge of up to 20% for each missed payment.
                </Card.Body>
            </Accordion.Collapse>
          </Card>

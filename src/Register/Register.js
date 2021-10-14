@@ -152,9 +152,9 @@ function Register() {
       <Container>
         <Row>
           <Col lg={4}>
-            <h2 className="orange-text welcome"><strong>Welcome. Get a loan in 30 minutes!</strong></h2>
+            <h2 className="orange-text welcome"><strong>Welcome 😀</strong></h2>
             <p className="grey-text">
-            Tuition E-Wallet is a fast- growing licensed micro lender in Nigeria. Based in Lagos, Nigeria. PCSL provides personal loans to salaried workers across the country through its innovative technology platform (PennyTrust TM). Today we help low to middle income earners gain quick, convenient, and secure access to loans that they desperately need.
+            Just Start your journey into a financial freedom
             </p>
           </Col>
 
